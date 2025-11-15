@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pressley Law Group, PLLC | Justice with Compassion. Strength with Purpose.</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Pressley Law Group, PLLC – New York civil rights, employment discrimination, personal injury, landlord–tenant, and estate planning law firm led by Attorney Melissa Pressley." />
+  <style>
+    :root {
+      --navy: #0d1b2a;
+      --gold: #c6a667;
+      --offwhite: #f8f7f4;
+      --charcoal: #333333;
+      --max-width: 1180px;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 16px 40px rgba(0, 0, 0, 0.16);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI",
+        sans-serif;
+      background-color: var(--offwhite);
+      color: var(--charcoal);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Layout helpers */
+
+    .page-wrapper {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-header {
+      margin-bottom: 2.5rem;
+    }
+
+    .section-eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: 2.3rem;
+      margin-bottom: 0.75rem;
+      color: var(--navy);
+    }
+
+    .section-subtitle {
+      max-width: 620px;
+      color: #555;
+    }
+
+    /* Buttons */
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.8rem;
+      border-radius: 999px;
+      border: 2px solid transparent;
+      font-weight: 600;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.18s ease-out;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background-color: var(--gold);
+      color: var(--navy);
+      border-color: var(--gold);
+    }
+
+    .btn-primary:hover,
+    .btn-primary:focus-visible {
+      background-color: #d5b671;
+      border-color: #d5b671;
+      transform: translateY(-1px);
+    }
+
+    .btn-secondary {
+      background-color: transparent;
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus-visible {
+      background-color: rgba(198, 166, 103, 0.06);
+      transform: translateY(-1px);
+    }
+
+    /* Header */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(13, 27, 42, 0.96);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 4.25rem;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      color: #fdfdfd;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.1rem;
+    }
+
+    .brand-text-main {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.95rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text-sub {
+      font-size: 0.72rem;
+      opacity: 0.7;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 1.75rem;
+      color: #f2f2f2;
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      position: relative;
+      padding: 0.25rem 0;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--gold);
+      transition: width 0.2s ease-out;
+    }
+
+    nav a:hover::after,
+    nav a:focus-visible::after {
+      width: 100%;
+    }
+
+    .header-cta {
+      margin-left: 0.5rem;
+    }
+
+    /* Mobile nav */
+
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: #ffffff;
+      cursor: pointer;
+    }
+
+    .nav-toggle span {
+      display: block;
+      width: 22px;
+      height: 2px;
+      background-color: #ffffff;
+      margin: 4px 0;
+      transition: all 0.2s ease-out;
+    }
+
+    .nav-menu {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      nav {
+        position: fixed;
+        inset: 4.25rem 0 auto 0;
+        background-color: rgba(13, 27, 42, 0.98);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1.5rem;
+        gap: 1rem;
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .header-cta {
+        margin-left: 0;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-menu {
+        display: none;
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      background: radial-gradient(circle at top left, rgba(198, 166, 103, 0.18), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(255, 255, 255, 0.3), transparent 55%),
+        var(--navy);
+      color: #fdfdfd;
+      padding-top: 5rem;
+      padding-bottom: 4rem;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-tagline {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.78rem;
+      color: var(--gold);
+      margin-bottom: 0.8rem;
+      font-weight: 600;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 2.8rem;
+      line-height: 1.18;
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-subtitle {
+      max-width: 540px;
+      font-size: 1rem;
+      color: #e5e7eb;
+      margin-bottom: 1.7rem;
+    }
+
+    .hero-meta {
+      margin-top: 1.5rem;
+      font-size: 0.9rem;
+      color: #e5e5e5;
+    }
+
+    .hero-meta strong {
+      color: #ffffff;
+    }
+
+    .hero-photo-wrap {
+      position: relative;
+    }
+
+    .hero-photo-card {
+      background-color: #0b1724;
+      border-radius: 26px;
+      padding: 0.75rem;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-photo {
+      border-radius: 22px;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      max-height: 480px;
+    }
+
+    .hero-badge {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.4rem;
+      background-color: rgba(13, 27, 42, 0.86);
+      color: #fdfdfd;
+      padding: 0.6rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid rgba(198, 166, 103, 0.7);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      backdrop-filter: blur(12px);
+    }
+
+    .hero-badge-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle, #d9f99d 0, #4ade80 100%);
+    }
+
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+    }
+
+    /* Practice areas grid */
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 960px) {
+      .card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .card-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .card {
+      background-color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.5rem 1.6rem;
+      border: 1px solid rgba(13, 27, 42, 0.05);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.04);
+      transition: transform 0.16s ease-out, box-shadow 0.16s ease-out,
+        border-color 0.16s ease-out;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(198, 166, 103, 0.14), transparent 50%);
+      opacity: 0;
+      transition: opacity 0.16s ease-out;
+      pointer-events: none;
+    }
+
+    .card:hover::before,
+    .card:focus-within::before {
+      opacity: 1;
+    }
+
+    .card:hover,
+    .card:focus-within {
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+      border-color: rgba(198, 166, 103, 0.7);
+    }
+
+    .card-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 999px;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      margin-bottom: 0.85rem;
+    }
+
+    .card-title {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.1rem;
+      color: var(--navy);
+      margin-bottom: 0.4rem;
+    }
+
+    .card-text {
+      font-size: 0.92rem;
+      color: #555;
+    }
+
+    .card-link {
+      display: inline-flex;
+      margin-top: 0.9rem;
+      font-size: 0.86rem;
+      color: var(--navy);
+      font-weight: 600;
+    }
+
+    .card-link span {
+      margin-left: 0.4rem;
+      transition: transform 0.16s ease-out;
+    }
+
+    .card-link:hover span,
+    .card-link:focus-visible span {
+      transform: translateX(3px);
+    }
+
+    /* Two-column sections */
+
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .bio-photo {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(13, 27, 42, 0.12);
+      font-size: 0.8rem;
+      color: #555;
+      gap: 0.4rem;
+      margin-bottom: 0.6rem;
+      background-color: #ffffff;
+    }
+
+    .pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background-color: var(--gold);
+    }
+
+    /* Testimonial */
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.8rem;
+    }
+
+    @media (max-width: 800px) {
+      .testimonial-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .testimonial-card {
+      background-color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.7rem 1.8rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+      border-left: 3px solid var(--gold);
+    }
+
+    .testimonial-quote {
+      font-style: italic;
+      margin-bottom: 0.9rem;
+    }
+
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--navy);
+    }
+
+    .testimonial-meta {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    /* CTA banner */
+
+    .cta-banner {
+      background-color: var(--navy);
+      color: #fdfdfd;
+      padding: 2.4rem 0;
+    }
+
+    .cta-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.6rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .cta-text {
+      max-width: 560px;
+    }
+
+    .cta-text h2 {
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .cta-text p {
+      font-size: 0.96rem;
+      color: #e5e5e5;
+    }
+
+    .cta-meta {
+      font-size: 0.9rem;
+      color: #d1d5db;
+      margin-top: 0.5rem;
+    }
+
+    /* Media / radio show */
+
+    .media-episodes {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .media-episodes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .media-episodes {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .episode-card {
+      background-color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.25rem 1.4rem 1.4rem;
+      border: 1px solid rgba(13, 27, 42, 0.06);
+    }
+
+    .episode-title {
+      font-weight: 600;
+      margin-bottom: 0.4rem;
+      font-size: 0.98rem;
+    }
+
+    .episode-meta {
+      font-size: 0.8rem;
+      color: #777;
+      margin-bottom: 0.6rem;
+    }
+
+    .episode-desc {
+      font-size: 0.86rem;
+      color: #555;
+    }
+
+    /* Blog */
+
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.6rem;
+    }
+
+    @media (max-width: 900px) {
+      .blog-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 640px) {
+      .blog-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .blog-card {
+      background-color: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.3rem 1.4rem 1.6rem;
+      border: 1px solid rgba(13, 27, 42, 0.06);
+    }
+
+    .blog-tag {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+
+    .blog-title {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .blog-excerpt {
+      font-size: 0.88rem;
+      color: #555;
+      margin-bottom: 0.9rem;
+    }
+
+    .blog-meta {
+      font-size: 0.78rem;
+      color: #888;
+    }
+
+    /* Contact */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    @media (max-width: 900px) {
+      .contact-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    .contact-card {
+      background-color: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 2rem 2rem 2.2rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .contact-field {
+      margin-bottom: 1rem;
+    }
+
+    .contact-label {
+      display: block;
+      font-size: 0.86rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .contact-input,
+    .contact-textarea,
+    .contact-select {
+      width: 100%;
+      padding: 0.65rem 0.75rem;
+      border-radius: 9px;
+      border: 1px solid rgba(13, 27, 42, 0.18);
+      font-size: 0.9rem;
+      font-family: inherit;
+      resize: vertical;
+      min-height: 44px;
+    }
+
+    .contact-textarea {
+      min-height: 120px;
+    }
+
+    .contact-help {
+      font-size: 0.75rem;
+      color: #777;
+      margin-top: 0.25rem;
+    }
+
+    .contact-info-block {
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    .contact-info-block h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-info-block + .contact-info-block {
+      margin-top: 1.4rem;
+    }
+
+    .contact-disclaimer {
+      font-size: 0.78rem;
+      color: #777;
+      margin-top: 1.6rem;
+    }
+
+    /* Lists */
+
+    ul {
+      padding-left: 1.1rem;
+    }
+
+    li {
+      margin-bottom: 0.35rem;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 1.6rem 0;
+      background-color: #050814;
+      color: #9ca3af;
+      font-size: 0.8rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrapper">
+  <!-- HEADER -->
+  <header aria-label="Main site header">
+    <div class="container">
+      <div class="header-inner">
+        <a href="#home" class="brand">
+          <div class="brand-mark">P</div>
+          <div>
+            <div class="brand-text-main">Pressley Law Group</div>
+            <div class="brand-text-sub">PLLC · Brooklyn & Midtown Manhattan</div>
+          </div>
+        </a>
+
+        <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+
+        <nav aria-label="Primary navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#practice-areas">Practice Areas</a>
+          <a href="#civil-rights">Civil Rights & Employment</a>
+          <a href="#personal-services">Personal Legal Services</a>
+          <a href="#media">Media</a>
+          <a href="#results">Results</a>
+          <a href="#blog">Insights</a>
+          <a href="#contact">Contact</a>
+          <a href="#contact" class="btn-primary header-cta">Request Consultation</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO / HOME -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-inner">
+          <div>
+            <div class="hero-tagline">Justice with Compassion · Strength with Purpose</div>
+            <h1 class="hero-title">
+              Standing up for your rights, dignity, and future across New York.
+            </h1>
+            <p class="hero-subtitle">
+              Pressley Law Group, PLLC, led by Attorney Melissa Pressley, represents clients in
+              civil rights, employment discrimination, personal injury, landlord–tenant, and
+              complex litigation matters throughout Brooklyn and Midtown Manhattan.
+            </p>
+
+            <div class="btn-row" aria-label="Primary actions">
+              <a href="#contact" class="btn-primary">Request a Consultation</a>
+              <a href="tel:+17185550194" class="btn-secondary">Call Now — (718) 555-0194</a>
+            </div>
+
+            <div class="hero-meta" aria-label="Locations">
+              <strong>Serving:</strong> Brooklyn · Midtown Manhattan · New York City Metro
+            </div>
+          </div>
+
+          <div class="hero-photo-wrap" aria-hidden="false">
+            <div class="hero-photo-card">
+              <!-- Replace src with Melissa's real professional portrait -->
+              <img
+                src="YOUR_MELISSA_PHOTO_HERO.jpg"
+                alt="Attorney Melissa Pressley"
+                class="hero-photo"
+              />
+              <div class="hero-badge">
+                <span class="hero-badge-dot"></span>
+                <span>Host of &ldquo;Pressley&rsquo;s Inspirations&rdquo; on WMCA</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY PRACTICE AREAS -->
+    <section id="practice-areas">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">Practice Areas</div>
+          <h2 class="section-title">Focused on the legal issues that shape real lives.</h2>
+          <p class="section-subtitle">
+            Pressley Law Group, PLLC offers strategic, compassionate representation across a
+            range of civil and personal legal matters.
+          </p>
+        </div>
+
+        <div class="card-grid" aria-label="Key practice areas">
+          <article class="card">
+            <div class="card-icon">⚖️</div>
+            <h3 class="card-title">Civil Rights</h3>
+            <p class="card-text">
+        
